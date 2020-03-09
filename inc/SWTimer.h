@@ -16,5 +16,12 @@ typedef struct
 	uint8_t stoped;	
 }SWTimer_t;
 
-typedef struct list_head  Timerlink;
+extern SWTimer_t head;
+
+bool SWTimer_Init();
+bool SWTimer_Creat(SWTimer_t * st, SWTimerFunc func, void * para, uint16_t timeout, uint8_t timeid, uint8_t stop);
+bool SWTimer_Start(uint8_t timerid);
+bool SWTimer_Stop(uint8_t timerid);
+void SWTimer_Tick(void);
+
 #endif
